@@ -24,11 +24,13 @@ services:
 
 # make sure the proper python version is installed and pip updated
 before_install:
+  if ! [ -f ./rxwt/webtestit ]; then
+    wget --no-check-certificate  --force-directories -O rxwt/webtestit https://www.ranorex.com/wp-json/sage/v2/webtestit/app-download/?platform=linuxAppImage
+  fi
   - sudo apt-get install desktop-file-utils
   - python --version
   - pip install -U pip
-  - wget --no-check-certificate -O webtestit https://www.ranorex.com/wp-json/sage/v2/webtestit/app-download/?platform=linuxAppImage
-  - chmod a+x ./webtestit
+  - chmod a+x ./rxwt/webtestit
 
 # install dependencies
 install:
@@ -36,4 +38,8 @@ install:
 
 
 # run webtestit
-script: ./webtestit run .
+script: ./rxwt/webtestit run .
+
+cache:
+  directories:
+    - $TRAVIS_BUILD_DIR/rxwt/ 
