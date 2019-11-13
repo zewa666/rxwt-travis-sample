@@ -1,0 +1,16 @@
+*.DS_Store
+.vscode
+**/__pycache__
+temp-reports/*.xml
+*.log
+
+# venv
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+share
+pyvenv.cfg
+.venv
