@@ -1,0 +1,38 @@
+sudo: required
+
+# Headless variable for Firefox
+env:
+  global:
+    - MOZ_HEADLESS=1
+
+# Use python with version 3.6
+language: python
+python:
+  - 3.6
+
+# Use Bionic Beaver 18.x
+dist: bionic
+
+# Add chrome and firefox browsers
+addons:
+  chrome: stable
+  firefox: latest
+
+# xvfb for virtual framebuffer --> webtestit requires graphical UI support
+services:
+  - xvfb
+
+# make sure the proper python version is installed and pip updated
+before_install:
+  - python --version
+  - pip install -U pip
+  - wget --no-check-certificate -O webtestit https://www.ranorex.com/wp-json/sage/v2/webtestit/app-download/?platform=linuxAppImage
+  - chmod a+x ./webtestit
+
+# install dependencies
+install:
+  - pip install -r ./requirements.txt
+
+
+# run webtestit
+script: ./webtestit run .
