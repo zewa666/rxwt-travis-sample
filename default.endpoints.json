@@ -3,7 +3,7 @@
     {
       "active": true,
       "capabilities": {},
-      "headless": false,
+      "headless": true,
       "id": "e2182e29-ae53-f1e6-e75e-cfc839ea71f8",
       "name": "chrome",
       "type": "local",
@@ -12,7 +12,7 @@
     {
       "active": true,
       "capabilities": {},
-      "headless": false,
+      "headless": true,
       "id": "24f280cf-e3fa-7542-a6e8-777fce718ab2",
       "name": "ff",
       "type": "local",
