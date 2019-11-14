@@ -8,7 +8,7 @@ env:
 # Use python with version 3.6
 language: python
 python:
-  - 3.6
+  - 3.7
 
 # Use Bionic Beaver 18.x
 dist: bionic
@@ -28,8 +28,13 @@ before_install:
     wget --no-check-certificate  --force-directories -O rxwt/webtestit https://www.ranorex.com/wp-json/sage/v2/webtestit/app-download/?platform=linuxAppImage;
     fi
   - sudo apt-get install desktop-file-utils
+  - sudo apt-get install python3-venv -y
+  - sudo apt-get install openjdk-11-jdk -y
   - python --version
   - pip install -U pip
+  - pip --version
+  - java --version
+  - javac --version
   - chmod a+x ./rxwt/webtestit
 
 # install dependencies
