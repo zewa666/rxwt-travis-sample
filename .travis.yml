@@ -30,20 +30,13 @@ before_install:
   - sudo apt-get install python3-pip -y
   - sudo apt-get install openjdk-11-jdk -y
   - sudo apt-get install libsecret-1-0 -y
-  - python --version
-  - pip --version
-  - python3 --version
-  - pip3 --version 
-  - java --version
-  - javac --version
   - chmod a+x ./rxwt/webtestit
 
 # install dependencies
+# additionally we need to manually create the venv and map pip3 due to an issue with Travis
 install:
-  - pip3 --version
   - python3 -m venv .
   - pushd bin && which pip3 | xargs ln -s && popd
-  - ls bin -al
 
 
 # run webtestit
