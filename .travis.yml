@@ -30,6 +30,7 @@ before_install:
   - sudo apt-get install desktop-file-utils
   - sudo apt-get install python3-venv -y
   - sudo apt-get install openjdk-11-jdk -y
+  - sudo apt-get install libsecret-1-0 -y
   - python --version
   - pip install -U pip
   - pip --version
